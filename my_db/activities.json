@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "62bb4bd32d119e766dbe4521"
+  },
+  "name": "Port Cable Car",
+  "category": "Excursion",
+  "img": "images/activities/port-cable-car.png"
+},{
+  "_id": {
+    "$oid": "62bb4d96d5174201eeeeacd0"
+  },
+  "name": "Montserrat Tour with Gourmet Wine Tasting",
+  "category": "Fun",
+  "img": "images/activities/wine-tasting.jpg"
+},{
+  "_id": {
+    "$oid": "62bb4da5d5174201eeeeacd1"
+  },
+  "name": "Van Van Market",
+  "category": "Food",
+  "img": "images/activities/van-van-market.jpg"
+},{
+  "_id": {
+    "$oid": "62bb4df1d5174201eeeeacd2"
+  },
+  "name": "Parc del Laberint",
+  "category": "Fun",
+  "img": "images/activities/parc-del-laberint.jpg"
+},{
+  "_id": {
+    "$oid": "62bb4e17d5174201eeeeacd3"
+  },
+  "name": "Plaça Sant Agustí Vell",
+  "category": "Food",
+  "img": "images/activities/jods-plaça-sant-agustí-vell.png"
+},{
+  "_id": {
+    "$oid": "62bb4e9ad5174201eeeeacd5"
+  },
+  "name": "Hot Air Balloon Flight",
+  "category": "Excursion",
+  "img": "images/activities/hot-air-balloon-flight.jpg"
+}]

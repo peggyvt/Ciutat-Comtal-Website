@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Home</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            /* CAROUSEL */
+            #demo {
+                margin: 50px;
+                margin-top: 5px;
+                max-width: 80%;
+                /* height: auto; */
+            }
+
+            .carousel-item img {
+                width: auto;
+            }
+
+            .carousel-control-prev-icon {
+                color: black;
+            }
+
+            .carousel-control-prev-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+            }
+
+            .carousel-control-next-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+            }
+
+            /* MOBILE */
+            @media (max-width: 630px) {
+                footer {
+                    justify-content: center;
+                    width: 100%;
+                    position: fixed;
+                    bottom: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <nav class="navbar-expand-lg mx-auto">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="user-home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna">BARCELONA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-accommodations">ACCOMMODATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-events">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-activities">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna-rating">RATING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-experiences">EXPERIENCES</a>
+                    </li>
+                    <% if(session == null) {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-registration">SIGN-UP|SIGN-IN</a>
+                        </li>
+                    <%} else {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-account">ACCOUNT</a>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </nav>
+        <div align="center">
+            <h1>Welcome to Barcelona</h1>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img class="d-block w-100" src="images/carousel/carousel1.jpg" alt="Barcelona image"></div>
+                    <div class="carousel-item"><img class="d-block w-100" src="images/carousel/carousel2.jpg" alt="Barcelona image"></div>
+                    <div class="carousel-item"><img class="d-block w-100" src="images/carousel/carousel3.jpg" alt="Barcelona image"></div>
+                    <div class="carousel-item"><img class="d-block w-100" src="images/carousel/jods@barna.png" alt="Jodie Comer at Barcelona"></div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" aria-label="previous button" data-slide="prev"><span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" aria-label="next button" data-slide="next"><span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

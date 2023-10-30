@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "62c9aba05f075975e66c5cb4"
+  },
+  "accommodation_name": "Our House: Architects' Flat",
+  "accommodation_date_from": "2022-07-16",
+  "accommodation_date_to": "2022-07-20",
+  "price": "2640",
+  "guests": [
+    {
+      "name": "Oksana",
+      "surname": "Astankova",
+      "dob": "12/03/1993",
+      "id": "ID-007"
+    },
+    {
+      "name": "Eve",
+      "surname": "Park",
+      "dob": "03/05/1981",
+      "id": "ID-001"
+    }
+  ]
+}]

@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "62be2a72a711030f35b7fc0d"
+  },
+  "username": "user-42421",
+  "name": "peggy vitsa",
+  "email": "peggyvitsa@gmail.com",
+  "password": "22222"
+},{
+  "_id": {
+    "$oid": "62c630ca4e0820b411904169"
+  },
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "1",
+  "username": "user-11111"
+},{
+  "_id": {
+    "$oid": "62c8ef2c5f25e037b42455c1"
+  },
+  "username": "user-54368",
+  "name": "Diane Nguyen",
+  "email": "dianenguyen@gmail.com",
+  "password": "333"
+}]

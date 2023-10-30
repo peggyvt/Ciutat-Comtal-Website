@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "62c07b0b22537b03e3687f16"
+  },
+  "img": "images/accommodations/architects-flat.jpg",
+  "category": "Homes/Villas",
+  "name": "Our House: Architects' Flat",
+  "desc": "This house is described as an unusual, very spacious 'Art Nouveau' flat, which was originally designed in 1906. The space has a reception hall, studio, dining, kitchen, living room, gallery, two bedrooms, and one bathroom, many of which are rooms featured on the third season of Killing Eve.",
+  "price": "330"
+},{
+  "_id": {
+    "$oid": "62c0818322537b03e3687f17"
+  },
+  "img": "images/accommodations/gran-hotel-havana.jpg",
+  "category": "Hotels",
+  "desc": "This elegant, design hotel is set in Barcelona’s city centre, 5 minutes’ walk from Plaza Catalunya. It features a sauna and a seasonal rooftop pool with a terrace.\nThe Gran Hotel Havana is located in Casa Fradera, a historic building dating from 1882. Rooms are decorated in a classic style and feature a marble bathroom. They come with a flat-screen TV and free WiFi.\nThe Grand Place restaurant serves traditional cuisine, and in summer guests can enjoy light meals on the hotel’s rooftop bar-terrace.",
+  "name": "Gran Hotel Havana",
+  "price": "188"
+},{
+  "_id": {
+    "$oid": "62c0820222537b03e3687f18"
+  },
+  "img": "images/accommodations/boutique-apartments.jpg",
+  "category": "Homes/Villas",
+  "name": "Boutique Apartments",
+  "desc": "Delicately restored apartments for up to 2 people, equipped with queen size beds and sofa bed. Large windows that allow natural light to enter. It consists of bedroom, living-dining room, fully equipped separate kitchen and full bathroom with shower tray.\nIts shades convey freshness, tranquility, trust, wellness, energy, stimulate creativity and reading.",
+  "price": "161"
+},{
+  "_id": {
+    "$oid": "62c0824e22537b03e3687f19"
+  },
+  "img": "images/accommodations/habana-hoose.jpg",
+  "category": "Hotels",
+  "name": "Habana Hoose",
+  "desc": "Chic&Basic Habana Hoose, is a new hotel concept in the center of Barcelona. Sophisticated, cozy and an irreverent point is the essence of Hotel chic&basic Habana Hoose. Undoubtedly the best option to enjoy an authentic experience with style and personality. All this including the feeling of relaxation so characteristic of all our accommodations.",
+  "price": "219"
+},{
+  "_id": {
+    "$oid": "62c0825e22537b03e3687f1a"
+  },
+  "img": "images/accommodations/val-apartments.jpg",
+  "category": "Homes/Villas",
+  "name": "Val Apartments Barcelona",
+  "desc": "These modern décor apartments are located in Barcelona city centre, next to Passeig de Gracia Avenue and within walking distance of Gaudi’s most famous Modernist buildings. Barcelona Apartment Val features air-conditioned 1, 2 or 3 bedroom apartments. Each one offers plenty of natural light and views of the city. Apartments also include a comfortable seating area with sofa and flat-screen TV, a fully equipped kitchen and a private bathroom.",
+  "price": "262"
+},{
+  "_id": {
+    "$oid": "62c0826222537b03e3687f1b"
+  },
+  "img": "images/accommodations/hostal.jpg",
+  "category": "Hotels",
+  "name": "Barcelona Hostal",
+  "desc": "This room is elegantly decorated and features laminate floors. It features air conditioning, a balcony and a double bed. This room has a private shower and external private bathroom, towels and bed linen are provided.",
+  "price": "99"
+}]

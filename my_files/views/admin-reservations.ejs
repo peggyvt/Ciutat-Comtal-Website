@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Reservations</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            .buttons {
+                border: 1px solid #68a69e;
+                background-color: white;
+                box-shadow: 1px 1px #b55626;
+                color: #b55626;
+                outline: none !important;
+            }
+            .accommodation_name, .accommodation_date_from, .accommodation_date_to, .price {
+                border: 1px solid #b55626;
+                font-weight: 200;
+                outline: none;
+                transition: 0.5s;
+            }
+            .accommodation_name:focus, .accommodation_date_from:focus, .accommodation_date_to:focus, .price:focus {
+                border: 1px solid #68a69e;
+                box-shadow: 1px 1px #b55626;
+                font-weight: 200;
+            }
+            .reservation-info > label {
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+            .reservation-info > input {
+                border: none;
+                border-bottom: 2px solid #68a69e !important;
+                font-weight: 400;
+                color: #674335;
+                outline: none;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <nav class="navbar-expand-lg mx-auto">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users">USERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-attractions">ATTRACTIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin-reservations">RESERVATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-events">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-activities">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-account">ACCOUNT</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div align="center">
+            <h1>Reservations</h1>
+            <% if(data.length != 0) { %>
+                <h4>Total Reservations Counter: <%=data.counter%></h4>
+            <table>
+                <tr>
+                    <th>accommodation_name</th>
+                    <th>accommodation_date_from</th>
+                    <th>accommodation_date_to</th>
+                    <th>price</th>
+                    <th>Info</th>
+                    <th>Cancel</th>
+                </tr>
+                <%var i=1;%>
+                <%data.forEach(function(mydata) {
+                    console.log("i: "+i)%>
+                    <tr>
+                        <form method="POST">
+                            <td><input class="accommodation_name" name="accommodation_name" value="<%=mydata.accommodation_name%>"></td>
+                            <td><input class="accommodation_date_from" name="accommodation_date_from" value="<%=mydata.accommodation_date_from%>"></td>
+                            <td><input class="accommodation_date_to" name="accommodation_date_to" value="<%=mydata.accommodation_date_to%>"></td>
+                            <td><input class="price" name="price" value="<%=mydata.price%>"></td>
+                            <td><button class="buttons" value="Info" type="button" data-toggle="modal" data-target="#info-Modal-<%=i%>">Info</button></td>
+                            <td><button class="buttons" formaction="CancelReservation?id=<%=mydata._id%>" type="submit" value="Cancel">Cancel</button></td>
+                        </form>
+                    </tr>
+                    <div class="modal fade" id="info-Modal-<%=i%>" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Accommodation Reservation Information</h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <section class="Info-Form" text-align="center">
+                                        <div class="reservation-info">
+                                            <h4 align="center">Guests</h4>
+                                            <h6>Guests: <%=mydata.guests.length %></h6><br>
+                                            <% for (var j = 0; j<mydata.guests.length; j++) { %>
+                                                <label class="name-label" for="name">Name: </label><br>
+                                                <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="name" name="name" readonly value="<%=mydata.guests[j].name%>"><br/>
+                                                <label class="name-label" for="name">Surname: </label><br>
+                                                <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="surname" name="surname" readonly value="<%=mydata.guests[j].surname%>"><br/>
+                                                <label class="name-label" for="name">Date of Birth: </label><br>
+                                                <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="dob" name="dob" readonly value="<%=mydata.guests[j].dob%>"><br/>
+                                                <label class="name-label" for="name">ID Number: </label><br>
+                                                <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="id" name="id" readonly value="<%=mydata.guests[j].id%>"><br/><br/>
+                                            <% } %>
+                                        </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <% i = i+1;
+                });%>
+            </table> 
+            <%} %>
+        </div>
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

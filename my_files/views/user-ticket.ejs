@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Events</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>-->
+
+        <!--Importing jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--Icon Library-->
+        <script src="https://kit.fontawesome.com/38fe6d47dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                
+        <!--External Javascript-->
+        <script src="eventsJavascript.js"></script>
+
+        <!--External jQuery-->
+        <script src="jQuery.js"></script>
+
+        <!--External AngularJS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            /* DIVS */
+            #div-ticket {
+                justify-content: center;
+                width: 100%;
+            }
+
+            /* ID */
+            #event_name {
+                width: 320px;
+            }
+            #date {
+                width: 150px;
+                font-weight: 400;
+                font-family: 'Noto Serif Display', serif;
+            }
+            #price {
+                width: 50px;
+            }
+
+            label {
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+            input {
+                border: none;
+                border-bottom: 2px solid #68a69e !important;
+                font-weight: 400;
+                color: #674335;
+                outline: none;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <h1 align="center">USER TICKET</h1>
+        <div id="div-ticket" align="center">
+            <% if(data.length != 0) { 
+                var i=1; %>
+                <form>
+                    <h4 align="center">Event Name</h4><br/>
+                    <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="event_name" name="name" readonly value="<%=data.event_name%>"><br/>
+                    <h4 align="center">Date</h4><br/>
+                    <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="date" name="date" readonly value="<%=data.event_date%>"><br/>
+                    <h4 align="center">Price</h4><br/>
+                    <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="price" name="price" readonly value="<%=data.price%>&euro;"><br/>
+                    <h4 align="center">Guests</h4>
+                    <% for (var i = 0; i<data.guests.length; i++) { %>
+                        <h6>Guest-<%=i%></h6><br>
+                        <label class="name-label" for="name">Name: </label><br>
+                        <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="name" name="name" readonly value="<%=data.guests[i].name%>"><br/>
+                        <label class="name-label" for="surname">Surname: </label><br>
+                        <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="surname" name="surname" readonly value="<%=data.guests[i].surname%>"><br/>
+                        <label class="name-label" for="dob">Date of Birth: </label><br>
+                        <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="dob" name="dob" readonly value="<%=data.guests[i].dob%>"><br/>
+                        <label class="name-label" for="id">ID Number: </label><br>
+                        <input style="white-space: pre-wrap; outline: none; border: none;" type="text" id="id" name="id" readonly value="<%=data.guests[i].id%>"><br/>
+                    <% } %>
+                </form>
+            <%}%>
+        </div>
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

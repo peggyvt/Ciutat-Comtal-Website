@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Rating</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--Icon Library-->
+        <script src="https://kit.fontawesome.com/38fe6d47dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            textarea {
+                font-weight: 200;
+                outline: none;
+            }
+            /* footer {
+                justify-content: center;
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+            } */
+            #userFile {
+                font-weight: 200;
+            }
+            h5 {
+                text-decoration: none;
+                color: #b55626;
+                font-weight: 300;
+                margin-top: 2%;
+                margin-bottom: 2%;
+                text-align: center;
+            }
+
+            /* MOBILE */
+            @media (max-width: 766px) {
+                textarea {
+                    width: 20em;
+                }
+            }
+
+            /* RATING SYSTEM */
+            #div-rating {
+                justify-content: center;
+                width: 100%;
+            }
+            .rate {
+                justify-content: center;
+                width: 100%;
+                height: 46px;
+                padding: 0 10px;
+                margin: auto;
+                transform: scaleX(-1);
+            }
+            .rate:not(:checked) > input {
+                position:absolute;
+                top:-9999px;
+            }
+            .rate:not(:checked) > label {
+                float: none;
+                justify-content: center;
+                width: 100%;
+                width: 1em;
+                overflow: hidden;
+                white-space: nowrap;
+                cursor: pointer;
+                font-size: 30px;
+                color: #ccc;
+            }
+            .rate:not(:checked) > label:before {
+                content: '★ ';
+            }
+            .rate > input:checked ~ label {
+                color: #D2A200;    
+            }
+            .rate:not(:checked) > label:hover,
+            .rate:not(:checked) > label:hover ~ label {
+                color: #D2A200;  
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <nav class="navbar-expand-lg mx-auto">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna">BARCELONA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-accommodations">ACCOMMODATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-events">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-activities">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="user-barna-rating">RATING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-experiences">EXPERIENCES</a>
+                    </li>
+                    <% if(session == null) {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-registration">SIGN-UP|SIGN-IN</a>
+                        </li>
+                    <%} else {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-account">ACCOUNT</a>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </nav>
+        <h1 align="center">RATE BARCELONA</h1>
+        <% if(session == null) {%>
+            <h5>you cannot make a review if you don't have an account</h5><br><br><br><br><br><br><br><br><br><br>
+        <%} else {%>    
+            <br>
+            <div id="div-rating" align="center">
+                <form method="POST">
+                    <label for="userFile" title="text">
+                        <h4>Upload some pics!</h4>
+                    </label><br>
+                    <input type="file" id="userFile" name="filename"><br><br>
+                    
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5"/>
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4"/>
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3"/>
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2"/>
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" required/>
+                        <label for="star1" title="text">1 star</label>
+                    </div><br>
+
+                    <label for="review">
+                        <h4>Write a review of Barcelona:</h4>
+                    </label><br>
+                    <textarea id="review" name="review" rows="4" cols="40"></textarea><br><br>
+
+                    <input type="submit" class="upload-button" aria-label="upload button" value="submit" formaction="UploadReview">
+                </form>
+            </div>
+        <%}%>
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "62c04eb13216ae5662161fb6"
+  },
+  "filename": "barcelona_2016.jpg",
+  "rate": "3",
+  "review": "Spent 4 days in Barcelona, the first two with a tour company and with a friend doing our own thing.\nCompared to Madrid, Seville, Granada, Valencia where we also stayed I have to say that overall Barca was a major disappointment - dirty expensive and poor value for money (unlike Madrid which could be expensive but good value). Barcelona reminded me too much of the centre of London ie. tacky, touristy and dirty.\nI won't be in a hurry to return -if ever but would heartily recommend all the other locations above.\n",
+  "email": "johndoe@gmail.com"
+},{
+  "_id": {
+    "$oid": "62c055a5b3efdea2e87f042b"
+  },
+  "email": "peggyvitsa@gmail.com",
+  "filename": "barcelona_day4.jpg",
+  "rate": "5",
+  "review": "There’s nowhere in the world like Barcelona. From days spent strolling the Gothic Quarter to afternoons at the beach and nights partying ‘til dawn, the city is magnetic. While tapas and bustling mercados are worth every bit of attention they get in guidebooks, Barcelona’s true crown jewel is the work of Antoni Gaudí. His iconic creations, like the jaw-dropping Basilica of La Sagrada Familia, are instantly recognisable and have fuelled millions of travel dreams. You won’t be the only tourist here (especially during the summer), but even amid the crowds you’ll find your own Mediterranean magic any time of year."
+},{
+  "_id": {
+    "$oid": "62c8e1635f25e037b42455c0"
+  },
+  "email": "johndoe@gmail.com",
+  "filename": "barcelona_2021.jpg",
+  "rate": "4",
+  "review": "We were in Barcelona in Sept. 2007 & I must say it was the best European trip I have ever been on. We stayed for 5 days, there were lots to see & do , including magnificent seafood restaurants, a nice beach, the 'Poble Espagnol' (old Spanish village) really opened my eyes to the past...... Totally unique experience was going to the Marmagnum shopping centre ( pricey shops though ) - you had to cross a moving bridge to get to it. We also will never forget the fun cable cars up to the castle , the views from them were breathtaking......."
+}]

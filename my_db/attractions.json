@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "62c7218fbf5614ec7babc306"
+  },
+  "name": "Arc De Triomf",
+  "img": "arc-de-triomf.jpg",
+  "desc": "The Arc de Triomf is a triumphal arch in the city of Barcelona in Catalonia, Spain. It was built by architect Josep Vilaseca i Casanovas as the main access gate for the 1888 Barcelona World Fair. The arch crosses over the wide central promenade of the Passeig de Lluís Companys, leading to the Ciutadella Park that now occupies the site of the world fair. It is located at the northern end of the promenade, facing the Passeig de Sant Joan. "
+},{
+  "_id": {
+    "$oid": "62c72226bf5614ec7babc307"
+  },
+  "name": "Sagrada Familia",
+  "img": "sagrada-familia.jpg",
+  "desc": "The absolute number 1 attraction in Barcelona is the Sagrada Familia; the holy cathedral designed by Antoni Gaudí. The unfinished church will probably be completed in 2026 and has to be part of your city break. Be sure to always buy tickets for the Sagrada Familia several days in advance!"
+},{
+  "_id": {
+    "$oid": "62c72296bf5614ec7babc308"
+  },
+  "name": "Park Güell",
+  "img": "park-güell.jpg",
+  "desc": "Park Guell is the famous park with mosaic benches and the salamander. This Park Guell is a sightseeing must-see when visiting Barcelona. However, only a limited number of visitors are admitted every hour. The park used to be free, but now you have to purchase your tickets in advance. "
+},{
+  "_id": {
+    "$oid": "62c722cfbf5614ec7babc309"
+  },
+  "name": "Casa Battló",
+  "img": "casa-batlló.jpg",
+  "desc": "Casa Batlló is a building with apartments designed by Antoni Gaudí, completely in the style of Catalan Modernism. The shapes of the house are based on the legend of George and the dragon. You will be amazed at the many beautiful details, colors and mosaics. "
+},{
+  "_id": {
+    "$oid": "62c722d4bf5614ec7babc30a"
+  },
+  "name": "Picasso Museum",
+  "img": "picasso-museum.jpg",
+  "desc": "The Picasso museum of Barcelona is one of the most popular tourist attractions in the city of Barcelona. The museum Picasso has three storeys and over 4,300 artworks by painter Pablo Picasso from the period 1890-1957. The artworks by painter Pablo Picasso on display in the gallery belong to cubism and surrealism as well as other styles. "
+},{
+  "_id": {
+    "$oid": "62c722dabf5614ec7babc30b"
+  },
+  "name": "Palau de la Música Catalana",
+  "img": "palau-de-la-música-catalana.jpg",
+  "desc": "Although it is still a fully functioning music hall it is equally as popular as a tourist attraction with guided tours around an interior renowned for its distinctive and ornate style. Today, more than half a million people a year attend musical performances in the Palau that range from symphonic and chamber music to jazz and Cançó (Catalan song). "
+}]

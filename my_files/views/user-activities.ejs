@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Activities</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--Icon Library-->
+        <script src="https://kit.fontawesome.com/38fe6d47dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            /* DIVS */
+            #div-activities {
+                justify-content: center;
+                width: 100%;
+            }
+            #div-filter {
+                float: left;
+                justify-content: left;
+                margin-left: 15px;
+            }
+            #div-search-bar {
+                float: right;
+                justify-content: right;
+                margin-right: 15px;
+            }
+
+            /* OTHER TAGS */
+            .row {
+                width: 100%;
+            }
+            .col-md-4 {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            .activities-images {
+                width: 100%;
+                height: 100%;
+            }
+            .search-bar {
+                border: 1px solid #b55626;
+                outline: none;
+                transition: 0.5s;
+            }
+            .search-bar:focus {
+                border: 1px solid #68a69e;
+                box-shadow: 1px 1px #b55626;
+                font-weight: 200;
+            }
+            .search-bar:focus::-webkit-input-placeholder {
+                opacity: 0;
+            }
+            .search-bar:focus::-moz-placeholder {
+                opacity: 0;
+            }
+            .search-bar:focus:-ms-input-placeholder {
+                opacity: 0;
+            }            
+            .search-bar:focus:-moz-placeholder {
+                opacity: 0;
+            }
+            .filter-button, .search-button {
+                border: 1px solid #68a69e;
+                background-color: white;
+                box-shadow: 1px 1px #b55626;
+                color: #b55626;
+            }
+            .filter-button:focus {
+                outline: none;
+            }
+            .fa {
+                color: #b55626;
+                margin-right: 7px;
+            }
+
+            /* MOBILE */
+            @media (max-width: 632px) {
+                #div-search-bar {
+                    margin-bottom: 15px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <nav class="navbar-expand-lg mx-auto">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna">BARCELONA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-accommodations">ACCOMMODATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-events">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="user-activities">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna-rating">RATING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-experiences">EXPERIENCES</a>
+                    </li>
+                    <% if(data.session == null) {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-registration">SIGN-UP|SIGN-IN</a>
+                        </li>
+                    <%} else {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-account">ACCOUNT</a>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </nav>
+        <h1 align="center">ACTIVITIES</h1>
+        <div id="div-filter">
+            <form method="POST">
+                <label for="filter">choose a filter:</label>
+                <select id="filter-button" class="filter-button" name="filter">
+                    <option value="Excursion">excursion</option>
+                    <option value="Fun">fun</option>
+                    <option value="Food">food</option>
+                </select>
+                <input id="filter-button" class="filter-button" type="submit" value="apply" aria-label="filter button with options excursion, fun and food" formaction="ActivitiesFilter">
+            </form>
+        </div>
+        <div id="div-search-bar">
+            <form method="POST">
+                <i class="fa fa-search"></i>
+                <input class="search-bar" type="text" name="search" aria-label="search bar" placeholder="whatcha lookin fo..">
+                <input id="search-button" class="search-button" type="submit" value="submit" aria-label="submit search" formaction="SelectSearchBar">
+            </form>
+        </div>
+        <br><br>
+        <div id="div-activities" align="center">
+            <div class="row">
+                <% if(data.length != 0) { 
+                    var i=1;
+                    data.forEach(function(mydata) { %>
+                    <article class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div>
+                            <img src="<%=mydata.img %>" alt="<%=mydata.name %>" class="activities-images">
+                        </div>
+                        <h4><%=mydata.name %></h4>
+                    </article>
+                    <% }) 
+                } %>
+            </div>
+        </div>
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

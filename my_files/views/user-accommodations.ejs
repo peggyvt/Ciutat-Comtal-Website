@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Accommodations</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--Icon Library-->
+        <script src="https://kit.fontawesome.com/38fe6d47dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--External Javascript-->
+        <script src="accommodationsJavascript.js"></script>
+
+        <!--External jQuery-->
+        <script src="jQuery.js"></script>
+
+        <!--External AngularJS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            /* DIVS */
+            #div-accommodations {
+                justify-content: center;
+                width: 100%;
+            }
+            #div-accommodations-filter {
+                float: left;
+                justify-content: left;
+                margin-left: 15px;
+            }
+            #div-box {
+                z-index: 2;
+                /* display: flexbox; */
+                position: fixed;
+                text-align: center;
+                background-color: white;
+                border: 2px solid #D2A200;
+                padding: 15px;
+                top: 10%;
+                left: 30%;
+                width: 40%;
+            }
+            #div-second-step, #div-third-step {
+                display: none;
+            }
+
+            /* CLASS */
+            .row {
+                width: 100%;
+            }
+            .accommodations-images {
+                width: 100%;
+                height: 100%;
+            }
+            .filter-button {
+                border: 1px solid #68a69e;
+                background-color: white;
+                box-shadow: 1px 1px #b55626;
+                color: #b55626;
+            }
+            .filter-button:focus {
+                outline: none;
+            }
+            .guests-button {
+                border: 1px solid #68a69e;
+                background-color: white;
+                box-shadow: 1px 1px #b55626;
+                color: #b55626;
+            }
+            .guests-button:focus {
+                outline: none;
+            }
+            .hidden {
+                display: none;
+            }
+            .h4-digits {
+                margin-top: 15px;
+                color: #674335;
+            }
+            .h4-third-step {
+                margin-top: 0;
+                color: #674335;
+            }
+
+            /* ID */
+            #second-step-img {
+                width: 20%;
+            }
+            #second-form {
+                display: none;
+            }
+            #price {
+                border: none;
+                border-bottom: 2px solid #68a69e;
+                font-weight: 400;
+                color: #b55626;
+                outline: none;
+                width: 50px;
+            }
+
+            p {
+                background-color: white;
+                padding-top: 10px;
+                margin: 0;
+            }
+            h2 {
+                text-decoration: none;
+                text-align: center;
+                color: #b55626;
+                font-weight: 300;
+                margin-top: 2%;
+                margin-bottom: 1%;
+                margin-left: 0%;
+            }
+            h5 {
+                text-decoration: none;
+                color: #b55626;
+                font-weight: 300;
+                margin-top: 2%;
+                margin-bottom: 2%;
+                text-align: center;
+            }
+
+            /* MEDIA QUERIES FOR RESPONSIVENESS*/
+            /* TABLET */
+            @media (min-width: 767px) and (max-width: 1080px) {
+                #div-box {
+                    top: 5%;
+                    left: 10%;
+                    width: 70%;
+                }
+            }
+
+            /* MOBILE */
+            @media (max-width: 766px) {
+                #div-box {
+                    top: 10%;
+                    left: 5%;
+                    width: 90%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <nav class="navbar-expand-lg mx-auto">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna">BARCELONA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="user-accommodations">ACCOMMODATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-events">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-activities">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna-rating">RATING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-experiences">EXPERIENCES</a>
+                    </li>
+                    <% if(data.session == null) {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-registration">SIGN-UP|SIGN-IN</a>
+                        </li>
+                    <%} else {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-account">ACCOUNT</a>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </nav>
+        <h1 align="center">ACCOMMODATIONS</h1>
+        <% if(data.session == null) {%>
+            <h5>you cannot make a reservation if you don't have an account</h5><br><br><br><br><br><br><br><br><br><br>
+        <%} else {%> 
+            <div id="div-accommodations" align="center">
+                <div id="div-accommodations-filter">
+                    <form method="POST">
+                        <label for="filter">choose a filter:</label>
+                        <select id="filter-button" class="filter-button" name="filter">
+                            <option value="Homes/Villas">homes/villas</option>
+                            <option value="Hotels">hotels</option>
+                        </select>
+                        <input id="filter-button" class="filter-button" type="submit" value="apply" aria-label="filter button with two options homes/villas and hotels" formaction="AccommodationsFilter">
+                    </form>
+                </div>
+                <div id="div-first-step">
+                    <div class="row">
+                        <% if(data.length != 0) { 
+                            var i=1;
+                            data.forEach(function(mydata) { %>
+                            <article class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div>
+                                    <img id="img-<%=i%>" src="<%=mydata.img %>" alt="<%=mydata.name %>" class="accommodations-images">
+                                </div>
+                                <h4><%=mydata.name %></h4>
+                                <div id="div-box" class="hidden hidden-<%=i%>">
+                                    <img id="img-<%=i%>" src="<%=mydata.img %>" alt="<%=mydata.name %>" class="accommodations-images">
+                                    <p id="price-<%=i%>" class="<%=mydata.price%>"><b>Description: </b><%=mydata.desc %></p>
+                                    <input id="accommodation-button-<%=i%>" class="accommodation-button" type="submit" value="reserve" aria-label="select accommodation button" onclick="sendAccommodationData(this.id)">
+                                </div>
+                            </article>
+                            <% i = i + 1; 
+                            });
+                        } %>
+                    </div>
+                </div>
+                <div id="div-second-step">
+                    <form class="first-form">
+                        <h4 id="second-step-h4"></h4>
+                        <img id="second-step-img" alt="accommodation image">
+                        <br><br>
+                        <label class="label-date-from" for="date-from">Check-in:</label>
+                        <input type="date" id="date-from" name="date-from" max="2022-12-31" onchange="updateCost()" required> 
+                        <br><br>
+                        <label class="label-date-to" for="date-to">Check-out:</label>
+                        <input type="date" id="date-to" name="date-to" max="2022-12-31" onchange="updateCost()" required> 
+                        <br><br>
+                        <label class="label-guests" for="guests">select number of guests:</label>
+                        <select id="guests-button" class="guests-button" name="guests" onchange="updateCost()">
+                            <option value="1" required>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br><br>
+                        <button id="guests-button_1" class="guests-button" value="apply" aria-label="dropdown list to select guest number 1-5" type="button" onclick="sendGuests()">submit</button>
+                        <div id="second-form"></div>
+                        <div id="total-price"></div>
+                    </form>
+                </div>
+                <form id="div-third-step" method="POST">
+                    <h2>Reservation Details</h2>
+
+                    <label class="label-name" for="accommodation-name">Accommodation name:</label><br>
+                    <input type="text" id="accommodation-name" class="accommodation-name" name="accommodation_name" aria-label="accommodation name" readonly><br>
+
+                    <label class="label-date-from_1" for="accommodation-date-from">Check-in:</label><br>
+                    <input type="text" id="accommodation-date-from" class="accommodation-date-from" name="accommodation_date_from" aria-label="check in" readonly><br>
+
+                    <label class="label-date-to_1" for="accommodation-date-to">Check-out:</label><br>
+                    <input type="text" id="accommodation-date-to" class="accommodation-date-to" name="accommodation_date_to" aria-label="check out" readonly><br>
+
+                    <label class="label-days" for="days">Number of Reservation Days:</label><br>
+                    <input type="text" id="days" class="days" name="days" aria-label="number of reservation days" readonly><br>
+                    
+                    <label class="label-price" for="price">Total Price of Reservation:</label><br>
+                    <input type="text" id="price" class="price" name="price" aria-label="total price of reservation" readonly><br>
+
+                    <div id="accommodation-guests"></div>
+
+                    <h2>Payment Details</h2>
+
+                    <label class="h4-third-step">please select card type:</label> 
+                    <div id="form-radio">
+                        <input type="radio" id="visa" name="cards" value="visa">
+                        <label for="visa">visa</label><br>
+                        <input type="radio" id="mastercard" name="cards" value="mastercard">
+                        <label for="mastercard" style="margin-bottom: 0;">mastercard</label><br>
+                    </div>
+                    
+                    <div ng-app="" name="mydiv">
+                        <label class="h4-digits">please enter card digits:</label><br>
+                        <input type="text" id="first-four" class="digits" name="first_four" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="first_four" aria-label="user's first four card digits">
+                        
+                        <input type="text" id="second-four" class="digits" name="second_four" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="second_four" aria-label="user's second four card digits">
+                        
+                        <input type="text" id="third-four" class="digits" name="third_four" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="third_four" aria-label="user's third four card digits">
+
+                        <input type="text" id="fourth-four" class="digits" name="fourth_four" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="fourth_four" aria-label="user's fourth four card digits"><br>
+
+                        <span ng-show="(mydiv.first_four.$dirty && (mydiv.first_four.$error.minlength || mydiv.first_four.$error.maxlength)) || (mydiv.second_four.$dirty && (mydiv.second_four.$error.minlength || mydiv.second_four.$error.maxlength)) || (mydiv.third_four.$dirty && (mydiv.third_four.$error.minlength || mydiv.third_four.$error.maxlength)) || (mydiv.fourth_four.$dirty && (mydiv.fourth_four.$error.minlength || mydiv.fourth_four.$error.maxlength))" style="color: red;">Each Field Requires 4 Digits</span><br>
+                        <span ng-show="(mydiv.first_four.$dirty && mydiv.first_four.$error.pattern) || (mydiv.second_four.$dirty && mydiv.second_four.$error.pattern) || (mydiv.third_four.$dirty && mydiv.third_four.$error.pattern) || (mydiv.fourth_four.$dirty && mydiv.fourth_four.$error.pattern)" style="color: red;">Wrong Pattern</span><br>
+                        
+                        <label class="label-random-num" for="random-num">please type the number:</label><br>
+                        <input type="text" id="random-num" class="random-num" name="random-num" aria-label="random generated number" readonly>
+                        
+                        <input type="text" id="user-num" class="user-num" name="user-num" aria-label="input to type the random generated number"><br>
+                    </div>
+
+                    <input id="reservation-button" class="reservation-button" type="submit" value="reserve" aria-label="reservation button" formaction="SubmitAccommodationReservation">
+                </form>
+            </div>
+        <%}%>
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

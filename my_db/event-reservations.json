@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "62c8d7ce5f25e037b42455bf"
+  },
+  "event_name": "Sala Montjuïc Open-Air Cinema Festival",
+  "event_date": "2022-07-10",
+  "price": "14",
+  "guests": [
+    {
+      "name": "Jim",
+      "surname": "Halpert",
+      "dob": "01/10/1978",
+      "id": "ID-Tuna"
+    },
+    {
+      "name": "Pam",
+      "surname": "Beesly",
+      "dob": "25/03/1979",
+      "id": "ID-Pamcasso"
+    }
+  ]
+}]

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Events</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>-->
+
+        <!--Importing jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--Icon Library-->
+        <script src="https://kit.fontawesome.com/38fe6d47dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                
+        <!--External Javascript-->
+        <script src="eventsJavascript.js"></script>
+
+        <!--External jQuery-->
+        <script src="jQuery.js"></script>
+
+        <!--External AngularJS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            /* DIVS */
+            #div-events {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            /* ID */
+            #second-step-img {
+                width: 20%;
+            }
+            #second-form {
+                display: none;
+            }
+            #price {
+                border: none;
+                border-bottom: 2px solid #68a69e;
+                font-weight: 400;
+                color: #b55626;
+                outline: none;
+                width: 50px;
+            }
+            #events-second-step, #div-third-step {
+                display: none;
+            }
+            #event-div-box {
+                z-index: 2;
+                position: fixed;
+                text-align: center;
+                top: 10%;
+                left: 30%;
+                width: 40%;
+            }
+
+            /* MEDIA QUERIES FOR RESPONSIVENESS*/
+            /* TABLET */
+            @media (min-width: 767px) and (max-width: 1080px) {
+                #event-div-box {
+                    top: 5%;
+                    left: 10%;
+                    width: 70%;
+                }
+            }
+
+            /* MOBILE */
+            @media (max-width: 766px) {
+                #event-div-box {
+                    top: 10%;
+                    left: 5%;
+                    width: 90%;
+                }
+            }
+
+            /* OTHER TAGS */
+            .row {
+                width: 100%;
+            }
+            .col-md-4 {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            .events-images {
+                width: 100%;
+                height: 100%;
+            }
+            .hidden {
+                display: none;
+            }
+            .guests-button {
+                border: 1px solid #68a69e;
+                background-color: white;
+                box-shadow: 1px 1px #b55626;
+                color: #b55626;
+            }
+            .guests-button:focus {
+                outline: none;
+            }
+            .h4-digits {
+                margin-top: 15px;
+                color: #674335;
+            }
+            .h4-third-step {
+                margin-top: 0;
+                color: #674335;
+            }
+            h2 {
+                text-decoration: none;
+                text-align: center;
+                color: #b55626;
+                font-weight: 300;
+                margin-top: 2%;
+                margin-bottom: 1%;
+                margin-left: 0%;
+            }
+            h5 {
+                text-decoration: none;
+                color: #b55626;
+                font-weight: 300;
+                margin-top: 2%;
+                margin-bottom: 2%;
+                text-align: center;
+            }
+            article p {
+                width: 100%;
+                margin: 0;
+            }
+            iframe {
+                position: fixed;
+                top: 20%;
+                left: 30%;
+                z-index: 2;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <nav class="navbar-expand-lg mx-auto">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna">BARCELONA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-accommodations">ACCOMMODATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="user-events">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-activities">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna-rating">RATING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-experiences">EXPERIENCES</a>
+                    </li>
+                    <% if(data.session == null) {
+                        console.log(data.session)%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-registration">SIGN-UP|SIGN-IN</a>
+                        </li>
+                    <%} else {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-account">ACCOUNT</a>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </nav>
+        <h1 align="center">SUMMER EVENTS</h1>
+        <% if(data.session == null) {%>
+            <h5>you cannot make a reservation if you don't have an account</h5><br><br><br><br><br><br><br><br><br><br>
+        <%} else {%>
+            <div id="div-events" align="center">
+                <div id="show-events">
+                    <div class="row">
+                        <% if(data.length != 0) { 
+                            var i=1;
+                            data.forEach(function(mydata) { %>
+                                <article class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <div>
+                                        <img id="img-<%=i%>" src="<%=mydata.img %>" alt="<%=mydata.name %>" class="events-images">
+                                    </div>
+                                    <h4><%=mydata.name %></h4>
+                                    <p>
+                                        <%=mydata.desc %><br>
+                                        <b>Dates</b>: <%=mydata.dates %><br>
+                                        <b>Tickets</b>: &euro;<span id="price-<%=i%>"><%=mydata.tickets %></span>
+                                    </p>
+                                    <div class="hidden hidden-<%=i%>">
+                                        <iframe  id="event-div-box" src="<%=mydata.iframe %>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                    <input id="event-reservation-button-<%=i%>" class="event-reservation-button" type="submit" value="reserve" aria-label="select event button" onclick="sendEventData(this.id)">
+                                </article>
+                            <% i = i+1; });
+                        } %>
+                    </div>
+                </div>
+                <div id="events-second-step">
+                    <form class="first-form">
+                        <h4 id="second-step-h4"></h4>
+                        <img id="second-step-img" alt="event image">
+                        <br><br>
+                        
+                        <label class="label-date" for="date" style="font-family: 'Calibri light';">select date:</label>
+                        <input type="date" id="date" name="date" max="2022-09-01" required> 
+                        <br><br>
+
+                        <label class="label-guests" for="guests">select number of guests:</label>
+                        <select id="guests-button" class="guests-button" name="guests" onchange="updateCost()">
+                            <option value="1" required>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br><br>
+                        <button id="guests-button_1" class="guests-button" value="apply" aria-label="dropdown list to select guest number 1-5" type="button" onclick="sendEventGuests()">submit</button>
+                        <div id="second-form"></div>
+                        <div id="total-price"></div>
+                    </form>
+                </div>
+                <form method="POST" id="div-third-step">
+                    <h2>Reservation Details</h2>
+
+                    <label class="label-name" for="event-name">Event name:</label><br>
+                    <input type="text" id="event-name" class="event-name" name="event_name" aria-label="event name" readonly><br>
+
+                    <label class="label-date" for="event-date">Date:</label><br>
+                    <input type="text" id="event-date" class="event-date" name="event_date" aria-label="date" readonly><br>
+
+                    <label class="label-price" for="price">Total Price of Reservation:</label><br>
+                    <input type="text" id="price" class="price" name="price" aria-label="total price of reservation" readonly><br>
+
+                    <div id="event-guests"></div>
+
+                    <h2>Payment Details</h2>
+
+                    <label class="h4-third-step">please select card type:</label> 
+                    <div id="form-radio">
+                        <input type="radio" id="visa" name="cards" value="visa">
+                        <label for="visa">visa</label><br>
+                        <input type="radio" id="mastercard" name="cards" value="mastercard">
+                        <label for="mastercard" style="margin-bottom: 0;">mastercard</label><br>
+                    </div>
+                    
+                    <div ng-app="" name="mydiv">
+                        <label class="h4-digits">please enter card digits:</label><br>
+                        <input type="text" id="first-four" class="digits" name="first_four_1" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="first_four_1" aria-label="user's first four card digits">
+                        
+                        <input type="text" id="second-four" class="digits" name="second_four_1" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="second_four_1" aria-label="user's second four card digits">
+                        
+                        <input type="text" id="third-four" class="digits" name="third_four_1" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="third_four_1" aria-label="user's third four card digits">
+
+                        <input type="text" id="fourth-four" class="digits" name="fourth_four_1" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" ng-model="fourth_four_1" aria-label="user's fourth four card digits"><br>
+
+                        <span ng-show="(mydiv.first_four_1.$dirty && (mydiv.first_four_1.$error.minlength || mydiv.first_four_1.$error.maxlength)) || (mydiv.second_four_1.$dirty && (mydiv.second_four_1.$error.minlength || mydiv.second_four_1.$error.maxlength)) || (mydiv.third_four_1.$dirty && (mydiv.third_four_1.$error.minlength || mydiv.third_four_1.$error.maxlength)) || (mydiv.fourth_four_1.$dirty && (mydiv.fourth_four_1.$error.minlength || mydiv.fourth_four_1.$error.maxlength))" class="ng-hide" style="color: red;">Each Field Requires 4 Digits</span><br>
+                        <span ng-show="(mydiv.first_four_1.$dirty && mydiv.first_four_1.$error.pattern) || (mydiv.second_four_1.$dirty && mydiv.second_four_1.$error.pattern) || (mydiv.third_four_1.$dirty && mydiv.third_four_1.$error.pattern) || (mydiv.fourth_four_1.$dirty && mydiv.fourth_four_1.$error.pattern)" class="ng-hide" style="color: red;">Wrong Pattern</span><br>
+
+                        <label class="label-random-num" for="random-num">please type the number:</label><br>
+                        <input type="text" id="random-num" class="random-num" name="random-num" aria-label="random generated number" readonly>
+                        
+                        <input type="text" id="user-num" class="user-num" name="user-num" aria-label="input to type the random generated number"><br>
+                    </div>
+
+                    <input id="reservation-button_1" class="reservation-button" type="submit" value="reserve" aria-label="reservation button" formaction="SubmitEventReservation">
+                </form>
+            </div>
+        <%}%>
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

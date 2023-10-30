@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciutat Comtal | Information</title>
+        <link rel="shortcut icon" href="images/ciutat-comtal-icon.png"/>
+        
+        <!--Basic Settings-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--External CSS Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+        <!--External JQuery-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+        <!--External JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Noto Serif Display fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+        <!--Icon Library-->
+        <script src="https://kit.fontawesome.com/38fe6d47dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css?v=1">
+
+        <!--Internal CSS-->
+        <style>
+            /* DIVS */
+            #div-map {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            #div-attractions {
+                justify-content: center;
+                width: 100%;
+            }
+            #div-travels {
+                color: #b55626;
+            }
+            #div-travels p {
+                font-family: 'Noto Serif Display', serif;
+                font-weight: 300;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            #div-travels a:hover {
+                font-weight: 400;
+                color: #955224;
+            }
+
+            /* OTHER TAGS */
+            .row {
+                width: 100%;
+            }
+            .col-md-4 {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            .travel-options {
+                color: #68a69e;
+            }
+            .attraction-images {
+                width: 90%;
+                height: 90%;
+            }
+            article p {
+                width: 100%;
+                margin: 0;
+            }
+
+            /* MEDIA QUERIES FOR RESPONSIVENESS*/
+            /* TABLET */
+            @media (min-width: 767px) and (max-width: 1080px) {
+                #map {
+                    height: 300px;
+                }
+            }
+
+            /* MOBILE */
+            @media (max-width: 766px) {
+                #map {
+                    height: 200px;
+                }
+                .aeroplanes45 {
+                    clear: both;
+                }
+            }
+
+            @media (max-width: 560px) {
+                .aeroplane3 {
+                    clear: both;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center">
+            <a href="user-home"><img src="images/ciutat-comtal-logo.png" width="150px" height="150px" aria-label="Ciutat Comtal is another word for Barcelona"></a><br>
+        </header>
+        <nav class="navbar-expand-lg mx-auto">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="user-barna">BARCELONA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-accommodations">ACCOMMODATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-events">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-activities">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-barna-rating">RATING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-experiences">EXPERIENCES</a>
+                    </li>
+                    <% if(data.session == null) {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-registration">SIGN-UP|SIGN-IN</a>
+                        </li>
+                    <%} else {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-account">ACCOUNT</a>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </nav>
+        <h1 align="center">BARCELONA</h1>
+        <div align="center">
+            <h2>Some information about Ciutat Comtal</h2>
+            <p>Barcelona is a city on the coast of northeastern Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second most populous municipality of Spain.<br>
+            The city is referred to as the <i><b>Ciutat Comtal</b></i> in Catalan and Ciudad Condal in Spanish (i.e., "Comital City" or "City of Counts"), owing to its old city name and its past as the seat of the Count of Barcelona.
+            A common abbreviated form used by locals for the city is Barna. The Count of Barcelona was the ruler of Catalonia from the 9th until the 15th century.<br>
+            With a population of 1.6 million within city limits, its urban area extends to numerous neighbouring municipalities within the Province of Barcelona and is home to around 4.8 million people, making it the fifth most populous urban area in the European Union after Paris, the Ruhr area, Madrid, and Milan. It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Besòs, and bounded to the west by the Serra de Collserola mountain range, the tallest peak of which is 512 metres (1,680 feet) high. </p>
+        </div>
+        <div id="div-map">
+            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95780.6556039909!2d2.070149324868397!3d41.392646714877095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2zzpLOsc-BzrrOtc67z47Ovc63LCDOmc-Dz4DOsc69zq_OsQ!5e0!3m2!1sel!2sgr!4v1655459457617!5m2!1sel!2sgr" width="80%" height="400px" style="border:0;" allowfullscreen="" loading="lazy" title="Barcelona's map"></iframe>
+        </div>
+        <div id="div-attractions" align="center">
+            <h2>Must-See Attractions!</h2>
+            <div class="row">
+                <% if(data.length != 0) { 
+                    var i=1;
+                    data.forEach(function(mydata) { %>
+                    <article class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div>
+                            <img src="images/attractions/<%=mydata.img %>" alt="<%=mydata.name %>" class="attraction-images">
+                        </div>
+                        <h4><%=mydata.name %></h4>
+                        <p><%-mydata.desc%></p>
+                    </article>
+                    <% }) 
+                } %>
+            </div>
+            <div id="div-travels" align="center">
+                <h2>Ways to visit Barcelona from Greece</h2>
+                <p>AEROPLANE OPTIONS:</p>
+                <i class="fa-solid fa-plane"></i> 
+                <a target="_blank" href="https://www.rome2rio.com/map/Greece/Barcelona#r/Fly-from-Heraklion">
+                    <span class="travel-options">HER to BCN</span>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-plane"></i> 
+                <a target="_blank" href="https://www.rome2rio.com/map/Greece/Barcelona#r/Fly-from-Athens">
+                    <span class="travel-options">ATH to BCN</span>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="aeroplane3">
+                    <i class="fa-solid fa-plane"></i> 
+                    <a target="_blank" href="https://www.rome2rio.com/map/Greece/Barcelona#r/Fly-from-Thessaloniki">
+                        <span class="travel-options">SKG to BCN</span>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+                <span class="aeroplanes45">
+                    <i class="fa-solid fa-plane"></i> 
+                    <a target="_blank" href="https://www.rome2rio.com/map/Greece/Barcelona#r/Fly-from-Rhodos">
+                        <span class="travel-options">RHO to BCN</span>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa-solid fa-plane"></i> 
+                    <a target="_blank" href="https://www.rome2rio.com/map/Greece/Barcelona#r/Fly-from-Ioannina">
+                        <span class="travel-options">IOA to BCN</span>
+                    </a>
+                </span>
+                <!--<i class="fa-solid fa-bus"></i><span class="travel-options">Athens to Budapest, Hungary</span>
+                <i class="fa-solid fa-train-tram"></i><span class="travel-options">Clark Ádám tér (Budapest) to Kelenföld vasútállomás M (Budapest)</span>
+                <i class="fa-solid fa-train"></i><span class="travel-options">Kelenfoeld (Budapest) to Mannheim Hbf (Germany)</span>
+                <i class="fa-solid fa-train"></i><span class="travel-options">Mannheim, Hauptbahnhof (Germany) to Lyon Part Dieu (France)</span>
+                <i class="fa-solid fa-train"></i><span class="travel-options">Lyon Part Dieu (France) to Barcelona-Sants (Final Destination)</span>-->
+            </div>
+        </div>
+        <footer>
+            <span>Check the <a class="footer-map" target="_blank" href="https://goo.gl/maps/AsWbGA4uFBpA6Q5a7">location</a>!</span>
+            <br><br>&copy CIUTAT COMTAL, 2022
+        </footer>
+    </body>
+</html>

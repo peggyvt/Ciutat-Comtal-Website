@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "62bb5190d5174201eeeeacd8"
+  },
+  "name": "Summer Nights at La Pedrera",
+  "img": "images/events/la-pedrera.jpg",
+  "desc": "What could be more memorable than a jazz concert atop the legendary ‘garden of warriors’ rooftop at one of the world’s greatest architectural marvels? Tickets to this La Pedrera event include a visit to the house’s famous whale skeleton attic as well as the one hour concert and a glass of Spanish champagne – cava. A great option for couples in Barcelona visiting in July.",
+  "tickets": "38",
+  "dates": "01.07-01.09",
+  "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.027208285353!2d2.159713715426022!3d41.39521547926352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a293998ae1d5%3A0xc49fa3624f371e6a!2zzprOrM62zrEgzpzOuc67zqw!5e0!3m2!1sel!2sgr!4v1655767840193!5m2!1sel!2sgr",
+  "tickets_counter": 21
+},{
+  "_id": {
+    "$oid": "62bb522ad5174201eeeeacd9"
+  },
+  "name": "Sala Montjuïc Open-Air Cinema Festival",
+  "img": "images/events/sala-montjuic.jpg",
+  "dates": "01.07-01.09",
+  "desc": "Sala Montjuïc hosts one of Barcelona's most popular open-air, cinema festivals in the grounds of the Castell de Montjuïc. The festival’s line-up is packed with award-winning modern and classic films, all are shown in their original language with Spanish subtitles. Various jazz, swing and flamenco bands will be performing and deck chairs are available to hire for those who want more comfort than a picnic blanket can offer. All films are VOSE—shown in original language with Spanish subtitles. Doors open at 20:30, music begins at 20:45 and screenings begin at 22:00.You are welcome to bring your own picnic and there is a bar on site as well. ",
+  "tickets": "7",
+  "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95804.6164347425!2d2.0866331831398237!3d41.37638193204255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2410a62b137%3A0xc8f5e88ea67f2d4!2zzprOrM-Dz4TPgc6_IM-Ezr_PhSDOnM6_zr3PhM62zr_Phc6vzro!5e0!3m2!1sel!2sgr!4v1655768054638!5m2!1sel!2sgr",
+  "tickets_counter": 23
+},{
+  "_id": {
+    "$oid": "62bb524fd5174201eeeeacda"
+  },
+  "name": "Brunch in the Park",
+  "img": "images/events/brunch-in-the-park.jpg",
+  "desc": "Of all Barcelona events in July locals swear by Brunch in the Park. This daytime doozy formerly known as Piknic Electronik is an electronic music festival under the sun at Montjuic Hill. It generally runs every Sunday during the summer. A great spot for international DJs. To get to Brunch in the Park Barcelona take the Paral·lel funicular from Paral·lel metro station.",
+  "dates": "01.07-01.09",
+  "tickets": "15",
+  "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12155.217640334808!2d-3.690428914798971!3d40.39102731742757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227344c8f10b1%3A0x5edafbaa2fce79fc!2sBrunch%20-In%20The%20Park!5e0!3m2!1sel!2sgr!4v1655768099838!5m2!1sel!2sgr",
+  "tickets_counter": 5
+}]
